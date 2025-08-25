@@ -1,30 +1,181 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Gurukripa Homestay</title>
-  <style>
-    :root{--bg:#f6f8fb}
-    body{
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-      margin:0; min-height:100vh; background:var(--bg);
-      display:flex; align-items:center; justify-content:center; padding:32px;
-    }
-    .wrap{ text-align:center; max-width:900px; width:100%; }
-    h1{ font-size:2rem; margin:0 0 18px; color:#111; }
-    .card{ background:#fff; border-radius:12px; padding:20px; box-shadow:0 10px 30px rgba(2,6,23,0.06); }
-    img{ max-width:100%; height:auto; border-radius:8px; display:block; margin:14px auto 0; }
-    .credit{ margin-top:10px; font-size:0.85rem; color:#555 }
-  </style>
+  <title>Home | Gurukripa Homestay</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="assets/images/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+  <meta name="description" content="Homely stay in Kanhangad, Kasaragod. Arrive as guests, leave as family — through nature’s window.">
 </head>
 <body>
-  <div class="wrap">
-    <div class="card">
-      <h1>Welcome to Gurukripa Homestay</h1>
-      <img src=photo.jpeg" alt="Gurukripa Homestay photo">
-      <div class="credit">This is just a sample</div>
+
+  <header class="site-header" role="banner">
+    <div class="container nav">
+      <a class="logo" href="index.html" aria-label="Gurukripa Homestay home">
+        <img src="assets/images/logo.png" alt="Gurukripa Homestay Logo" class="logo-img">
+        <span class="logo-text">Gurukripa Homestay</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle menu">☰</button>
+      <nav id="primary-nav" class="nav-links" role="navigation">
+        <a href="index.html">Home</a>
+        <a href="rooms.html">Rooms</a>
+        <a href="tariff.html">Tariff</a>
+        <a href="amenities.html">Facilities</a>
+        <a href="nearby.html">Nearby</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+  
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Arrive as guests, leave as family — through nature’s window.</h1>
+        <p>Warm, natural, and inviting — a peaceful homestay in Kanhangad with hearty breakfasts and thoughtful spaces for families and friends.</p>
+        <div class="cta">
+          <a class="btn btn-secondary" href="rooms.html">See Rooms</a>
+          <a class="btn btn-primary" href="tariff.html">See Tariff & Book</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vertical photo carousel (3+ portrait images) -->
+<section class="section">
+  <div class="container">
+    <h2>Glimpses of Our Home</h2>
+    <div class="carousel" aria-label="Rotating images">
+      <div class="carousel-track">
+        <img src="assets/images/home/vertical1.jpg" alt="Vertical photo 1" class="active" loading="eager">
+        <img src="assets/images/home/vertical2.jpg" alt="Vertical photo 2" loading="lazy">
+        <img src="assets/images/home/vertical3.jpg" alt="Vertical photo 3" loading="lazy">
+        <img src="assets/images/home/vertical3.jpg" alt="Vertical photo 3 duplicate" loading="lazy">
+        <img src="assets/images/home/vertical3.jpg" alt="Vertical photo 3 duplicate" loading="lazy">
+        <img src="assets/images/home/vertical3.jpg" alt="Vertical photo 3 duplicate" loading="lazy">
+      </div>
+
+      <!-- Overlay navigation arrows -->
+      <div class="carousel-nav" aria-hidden="false">
+        <button class="carousel-btn prev" aria-label="Previous slide" title="Previous">
+          &#10094;
+        </button>
+        <button class="carousel-btn next" aria-label="Next slide" title="Next">
+          &#10095;
+        </button>
+      </div>
+
+      <!-- Dots + Play/Pause -->
+      <div class="carousel-controls">
+        <div class="carousel-dots" aria-hidden="false"></div>
+        <button class="carousel-toggle" aria-pressed="false" aria-label="Pause autoplay" title="Pause">
+          &#10074;&#10074; <!-- pause icon -->
+        </button>
+      </div>
     </div>
   </div>
+</section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Welcome to Gurukripa Homestay</h2>
+        <p>Perfect for couples, solo travelers, or small families looking for a quiet and restful stay.<br>
+
+The inspiration behind Gurukripa Homestay comes from my wife’s love for welcoming people into our home with warmth and care. We are guided by the essence of traditional Indian hospitality – Atithi Devo Bhava (Guests are like God) – where every visitor is treated as part of our family.
+Hosting is our joy. We love sharing delicious home-cooked meals, helping guests explore nearby attractions, and providing a peaceful stay surrounded by nature. At Gurukripa Homestay, every guest is welcomed with personal care, every meal is prepared with love, and every stay is meant to relax in comfort and experience the warmth of a true home away from home.
+</p>
+        <div class="banner" style="margin-top:12px">
+          <p><b>Complimentary breakfast</b> for all stays. Lunch & dinner available on prior order.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Why stay at Gurukripa</h2>
+        <div class="feature-grid">
+          <div class="feature-chip" title="Complimentary Breakfast" aria-label="Complimentary Breakfast">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 10h14a4 4 0 0 0 0-8H3v8zm14 2H3a5 5 0 0 0 5 5h4a5 5 0 0 0 5-5z"/></svg>
+            Complimentary breakfast
+          </div>
+          <div class="feature-chip" title="Free Wi‑Fi" aria-label="Free Wi‑Fi">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm6-2a10 10 0 0 0-12 0l1.5 1.5a8 8 0 0 1 9 0L18 16zm3-3a14 14 0 0 0-18 0l1.5 1.5a12 12 0 0 1 15 0L21 13z"/></svg>
+            Free Wi‑Fi
+          </div>
+          <div class="feature-chip" title="Air‑conditioned rooms" aria-label="Air‑conditioned rooms">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5h18v6H3zM3 13h18v6H3z"/></svg>
+            Air‑conditioned rooms
+          </div>
+          <div class="feature-chip" title="Private Parking" aria-label="Private Parking">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5 11h14l-1.5-4.5A2 2 0 0 0 15.6 5H8.4a2 2 0 0 0-1.9 1.5L5 11zM5 13v5h2v-2h10v2h2v-5H5z"/></svg>
+            Free private parking
+          </div>
+          <div class="feature-chip" title="Shared Kitchen" aria-label="Shared Kitchen">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 3h6v10H3zM15 3h6v6h-6zM11 13h10v8H11z"/></svg>
+            Kitchen access
+          </div>
+          <div class="feature-chip" title="Laundry Facility" aria-label="Laundry Facility">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5 3h14v18H5zM7 7h10v10H7z"/></svg>
+            Laundry facility
+          </div>
+          <div class="feature-chip" title="Quiet Garden" aria-label="Quiet Garden">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5 21h14v-2H5v2zM12 2l3 7H9l3-7z"/></svg>
+            Quiet garden
+          </div>
+          <div class="feature-chip" title="Family‑friendly" aria-label="Family‑friendly">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 7a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM6 22v-4a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v4"/></svg>
+            Family‑friendly
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Floating portrait video player (bottom-right, above WhatsApp) -->
+  <div class="video-float" id="tour-video" aria-label="Gurukripa Homestay tour video">
+    <video src="assets/video/placeholder.mp4" playsinline muted loop autoplay></video>
+    <div class="video-controls" aria-hidden="false">
+      <div class="vc-row vc-top">
+        <button class="vc-btn" data-action="expand" aria-label="Maximize video" title="Maximize (modal)"></button>
+      </div>
+      <div class="vc-row vc-bottom">
+        <button class="vc-btn" data-action="mute" aria-label="Mute or unmute video" title="Mute/Unmute"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Centered modal overlay for maximized portrait video -->
+  <div class="modal" role="dialog" aria-modal="true" aria-label="Tour video modal">
+    <div class="modal-inner">
+      <video src="assets/video/placeholder.mp4" playsinline muted loop></video>
+      <div class="close-row">
+        <button class="vc-btn" data-action="minimize" aria-label="Close video" title="Close (X)"></button>
+      </div>
+      <div class="mute-row">
+        <button class="vc-btn" data-action="modal-mute" aria-label="Mute or unmute video" title="Mute/Unmute"></button>
+      </div>
+    </div>
+  </div>
+
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <p>© 2025 Gurukripa Homestay · Makham Road, Alamipally, Kanhangad PO, Kasaragod 671315, Kerala</p>
+    <p><a href="mailto:stayatgurukripa@gmail.com">stayatgurukripa@gmail.com</a> ·
+       <a href="tel:+919947017636">+91 99470 17636</a> /
+       <a href="tel:+919947196220">+91 99471 96220</a></p>
+  </div>
+</footer>
+<a class="whatsapp-float" aria-label="Chat on WhatsApp" href="https://wa.me/919947017636?text=Hi%20Gurukripa%20Homestay%2C%20I'd%20like%20to%20ask%20about%20availability%20and%20rates." target="_blank" rel="noopener">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M19.11 17.57c-.29-.15-1.71-.84-1.97-.94-.26-.1-.45-.15-.65.15-.19.29-.75.94-.92 1.13-.17.19-.34.21-.62.06-.29-.15-1.2-.44-2.29-1.41-.85-.76-1.42-1.7-1.58-1.99-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.19-.29.29-.49.1-.19.05-.36-.02-.51-.06-.15-.65-1.55-.89-2.12-.23-.56-.47-.48-.65-.49l-.55-.01c-.19 0-.49.07-.74.36-.26.29-.99.97-.99 2.37 0 1.39 1.02 2.74 1.17 2.93.15.19 2.01 3.06 4.87 4.29.68.29 1.21.47 1.62.6.68.22 1.3.19 1.79.11.55-.08 1.71-.7 1.95-1.37.24-.68.24-1.26.17-1.37-.06-.11-.26-.17-.55-.32zM16.01 3.2c-7.1 0-12.84 5.74-12.84 12.84 0 2.26.59 4.49 1.71 6.45L3.2 28.8l6.5-1.7c1.9 1.04 4.04 1.59 6.21 1.59h.01c7.1 0 12.84-5.74 12.84-12.84 0-3.43-1.33-6.66-3.75-9.08-2.43-2.43-5.66-3.77-9-3.78h0zm7.61 20.46c-2.03 2.03-4.74 3.15-7.61 3.15-2.15 0-4.25-.62-6.06-1.79l-.43-.26-3.86 1.01 1.03-3.76-.28-.46c-1.07-1.77-1.63-3.82-1.63-5.9 0-6.16 5.01-11.17 11.17-11.17 2.98 0 5.78 1.16 7.88 3.26 2.11 2.1 3.27 4.9 3.27 7.88 0 2.87-1.12 5.58-3.18 7.63z"/></svg>
+</a>
+<script src="scripts.js"></script>
+
 </body>
 </html>
