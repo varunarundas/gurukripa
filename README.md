@@ -1,2 +1,0 @@
-# gurukripa
-HomeStay Websitr
