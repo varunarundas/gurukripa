@@ -1,23 +1,28 @@
-// Mobile nav toggle (horizontal menu on mobile)
+// ---------------------
+// Mobile nav toggle
+// ---------------------
 const btn = document.querySelector('.nav-toggle');
 const nav = document.getElementById('primary-nav');
 if (btn && nav){
   btn.addEventListener('click', ()=>{
     const expanded = btn.getAttribute('aria-expanded') === 'true';
     btn.setAttribute('aria-expanded', String(!expanded));
-    if (expanded) {
-      nav.style.display = 'none';
-    } else {
-      nav.style.display = 'flex';
-      nav.style.flexDirection = 'row';   // horizontal layout
-      nav.style.flexWrap = 'wrap';       // allow wrapping if needed
-      nav.style.gap = '12px';            // space between links
+    nav.classList.toggle('show', !expanded);
+  });
+
+  // Optional: close menu if clicked outside
+  document.addEventListener('click', (e)=>{
+    if (!nav.contains(e.target) && !btn.contains(e.target)) {
+      nav.classList.remove('show');
+      btn.setAttribute('aria-expanded', 'false');
     }
   });
 }
 
 
+// ---------------------
 // Floating portrait video player
+// ---------------------
 (function(){
   const float = document.querySelector('.video-float');
   if(!float) return;
@@ -94,7 +99,9 @@ if (btn && nav){
 })();
 
 
-// Home vertical carousel (arrows + dots + autoplay w/ pause)
+// ---------------------
+// Home vertical carousel
+// ---------------------
 (function(){
   const track = document.querySelector('.carousel-track');
   if (!track) return;
@@ -131,7 +138,7 @@ if (btn && nav){
     if (timer) clearInterval(timer);
     timer = setInterval(()=> go(idx + 1), interval);
     playing = true;
-    toggleBtn.innerHTML = '&#10074;&#10074;'; // pause icon
+    toggleBtn.innerHTML = '&#10074;&#10074;';
     toggleBtn.setAttribute('aria-label', 'Pause autoplay');
     toggleBtn.setAttribute('aria-pressed', 'false');
   }
@@ -140,7 +147,7 @@ if (btn && nav){
     if (timer) clearInterval(timer);
     timer = null;
     playing = false;
-    toggleBtn.innerHTML = '&#9658;'; // play icon
+    toggleBtn.innerHTML = '&#9658;';
     toggleBtn.setAttribute('aria-label', 'Play slideshow');
     toggleBtn.setAttribute('aria-pressed', 'true');
   }
@@ -170,11 +177,10 @@ if (btn && nav){
   toggleBtn.addEventListener('click', ()=> playing ? pause() : play());
   toggleBtn.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); toggleBtn.click(); }});
 
-  // Pause on hover (standard UX)
   carousel.addEventListener('mouseenter', ()=> playing && pause());
   carousel.addEventListener('mouseleave', ()=> !playing && play());
 
-  // Optional: swipe support for touch devices
+  // Touch swipe
   let startX = null;
   track.addEventListener('touchstart', (e)=>{ startX = e.touches[0].clientX; }, {passive:true});
   track.addEventListener('touchend', (e)=>{
@@ -184,12 +190,13 @@ if (btn && nav){
     startX = null;
   });
 
-  // Kick off autoplay
   play();
 })();
 
 
+// ---------------------
 // Rooms lightbox
+// ---------------------
 (function(){
   const lb = document.querySelector('.lightbox');
   if(!lb) return;
