@@ -1,13 +1,21 @@
-// Mobile nav toggle
+// Mobile nav toggle (horizontal menu on mobile)
 const btn = document.querySelector('.nav-toggle');
 const nav = document.getElementById('primary-nav');
 if (btn && nav){
   btn.addEventListener('click', ()=>{
     const expanded = btn.getAttribute('aria-expanded') === 'true';
     btn.setAttribute('aria-expanded', String(!expanded));
-    nav.style.display = expanded ? 'none' : 'flex';
+    if (expanded) {
+      nav.style.display = 'none';
+    } else {
+      nav.style.display = 'flex';
+      nav.style.flexDirection = 'row';   // horizontal layout
+      nav.style.flexWrap = 'wrap';       // allow wrapping if needed
+      nav.style.gap = '12px';            // space between links
+    }
   });
 }
+
 
 // Floating portrait video player
 (function(){
@@ -84,6 +92,7 @@ if (btn && nav){
     modalMuteBtn.addEventListener('keydown', (e)=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); modalMuteBtn.click(); } });
   }
 })();
+
 
 // Home vertical carousel (arrows + dots + autoplay w/ pause)
 (function(){
@@ -179,6 +188,7 @@ if (btn && nav){
   play();
 })();
 
+
 // Rooms lightbox
 (function(){
   const lb = document.querySelector('.lightbox');
@@ -230,4 +240,3 @@ if (btn && nav){
     if (e.key==='ArrowLeft') move(-1);
   });
 })();
-
