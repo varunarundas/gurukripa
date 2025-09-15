@@ -3,22 +3,30 @@
 // ---------------------
 const btn = document.querySelector('.nav-toggle');
 const nav = document.getElementById('primary-nav');
+
 if (btn && nav){
   btn.addEventListener('click', ()=>{
     const expanded = btn.getAttribute('aria-expanded') === 'true';
     btn.setAttribute('aria-expanded', String(!expanded));
-    nav.classList.toggle('show', !expanded);
+    nav.classList.toggle('show', !expanded); // CSS controls vertical layout
   });
 
-  // Optional: close menu if clicked outside
+  // Close when clicking outside
   document.addEventListener('click', (e)=>{
     if (!nav.contains(e.target) && !btn.contains(e.target)) {
       nav.classList.remove('show');
       btn.setAttribute('aria-expanded', 'false');
     }
   });
-}
 
+  // Close when clicking a nav link (better UX on mobile)
+  nav.querySelectorAll('a').forEach(link=>{
+    link.addEventListener('click', ()=>{
+      nav.classList.remove('show');
+      btn.setAttribute('aria-expanded','false');
+    });
+  });
+}
 
 // ---------------------
 // Floating portrait video player
